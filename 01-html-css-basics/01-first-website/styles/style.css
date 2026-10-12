@@ -1,0 +1,55 @@
+html {
+  font-size: 10px;
+  /* px 表示“像素（pixel）”: 基础字号为 10 像素 */
+  font-family:
+    "Open Sans", sans-serif;
+  /* 字体 */
+  background-color: #00539f;
+  /* 背景颜色 */
+}
+
+body {
+  width: 600px;
+  /* 宽度 */
+  margin: 0 auto;
+  /* 居中 */
+  background-color: #ff9500;
+  /* 背景颜色 */
+  padding: 0 20px 20px 20px;
+  /* 内边距 */
+  border: 5px solid black;
+  /* 边框 */
+}
+
+h1 {
+  font-size: 60px;
+  /* 字体大小 */
+  text-align: center;
+  /* 文本居中 */
+  margin: 0;
+  /* 外边距 */
+  padding: 20px 0;
+  /* 内边距 */
+  color: #276baa;
+  /* 文本颜色 */
+  text-shadow: 10px 10px 3px rgb(35, 31, 71);
+  /* 文本阴影 */
+}
+
+img {
+  display: block;
+  /* 图片居中 */
+  margin: 0 auto;
+  /* 图片外边距 */
+}
+
+
+p,
+li {
+  font-size: 16px;
+  /* 字体大小 */
+  line-height: 2;
+  /* 行高 */
+  letter-spacing: 1px;
+  /* 字间距 */
+}

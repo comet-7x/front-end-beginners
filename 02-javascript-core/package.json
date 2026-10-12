@@ -1,0 +1,20 @@
+{
+  "name": "js-demo",
+  "version": "1.0.0",
+  "description": "JS/TS learning playground",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js",
+    "01": "node 01-variables.js",
+    "02": "node 02-functions.js",
+    "03": "node 03-objects.js",
+    "04": "node 04-arrays.js",
+    "05": "node 05-closures.js",
+    "06": "node 06-prototypes.js",
+    "07": "node 07-async.js",
+    "08": "node 08-modules/main.js",
+    "09": "node 09-errors.js"
+  },
+  "keywords": ["learning", "javascript", "typescript"],
+  "license": "MIT"
+}

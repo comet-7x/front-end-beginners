@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DOM 操作与事件模型核心演练</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>DOM 操作与事件委托实战</h1>
+      <p class="subtitle">掌握现代 Web API、事件模型与数据持久化</p>
+    </header>
+
+    <main>
+      <!-- 输入区域 -->
+      <form id="todo-form" class="input-group">
+        <input
+          type="text"
+          id="todo-input"
+          placeholder="输入新任务，按回车添加..."
+          autocomplete="off"
+          required
+        />
+        <button type="submit" id="add-btn">添加任务</button>
+      </form>
+
+      <!-- 状态统计与操作 -->
+      <div class="stats-bar">
+        <span id="task-count">剩余未完成：0 项</span>
+        <button id="clear-completed" class="text-btn">清除已完成</button>
+      </div>
+
+      <!-- 任务列表容器（事件委托挂载点） -->
+      <ul id="todo-list" class="todo-list">
+        <!-- 动态通过 JavaScript 渲染 -->
+      </ul>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

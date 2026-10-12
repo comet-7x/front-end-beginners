@@ -1,0 +1,6 @@
+- [x] 安装[`Prettier`](https://prettier.io/docs)——一个代码自动格式化工具(前端 / TS/JS/JSON/YAML/Markdown)，可以让你的代码看起来整洁一致。
+- [ ] 安装[`ESLint`](https://eslint.org/docs/user-guide/getting-started)——一个代码质量工具(JS/TS 代码语法 + 代码规范检查工具（查错误、不规范写法）)，可以帮助你发现和修复代码中的问题。
+- [ ] 安装[`bat`](https://github.com/sharkdp/bat)——一个更好的 `cat`（`cat` 用于打印文件内容）。
+- [ ] 安装[`prettyping`](http://denilson.sa.nom.br/prettyping/)——命令行中的 `ping` 命令，但是是可视化的（ping 是检查服务器是否有响应的有用工具）。
+- [ ] 安装[`htop`](http://hisham.hm/htop/)——进程查看器，当某些东西使你的 CPU 风扇的行为像一个喷气发动机，并且你想要识别出错的程序时，它非常有用。
+- [ ] 安装[`tldr`](https://tldr.sh/#installation)——在本章前面提到的，但是可以作为命令行工具使用。
