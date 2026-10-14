@@ -1,146 +1,255 @@
-<!DOCTYPE html>
+<!doctype html>
 <!-- 
   1. <!DOCTYPE html>: 文档类型声明，告诉浏览器以现代 HTML5 标准模式渲染，避免触发怪异模式 (Quirks Mode)。
   2. <html lang="zh-CN">: 根元素。lang 指定语言，有利于搜索引擎(SEO)和屏幕朗读器(无障碍 a11y)正确发音。
 -->
 <html lang="zh-CN">
-<head>
-  <!-- 字符编码：推荐永远使用 utf-8，避免中文乱码 -->
-  <meta charset="UTF-8" />
+  <head>
+    <!-- 字符编码：推荐永远使用 utf-8，避免中文乱码 -->
+    <meta charset="UTF-8" />
 
-  <!-- 视口设置 (Viewport)：移动端响应式的灵魂！告诉浏览器页面宽度等于设备物理宽度，初始缩放 1:1 -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 视口设置 (Viewport)：移动端响应式的灵魂！告诉浏览器页面宽度等于设备物理宽度，初始缩放 1:1 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO 与社交分享元信息 -->
-  <meta name="description" content="HTML5 语义化结构与表单系统学习范例" />
-  <meta name="keywords" content="HTML5, 语义化, 表单, 前端入门" />
+    <!-- SEO 与社交分享元信息 -->
+    <meta name="description" content="HTML5 语义化结构与表单系统学习范例" />
+    <meta name="keywords" content="HTML5, 语义化, 表单, 前端入门" />
 
-  <!-- 页面标题：出现在浏览器标签栏和搜索引擎搜索结果的主标题 -->
-  <title>HTML5 语义化结构与现代表单规范</title>
+    <!-- 页面标题：出现在浏览器标签栏和搜索引擎搜索结果的主标题 -->
+    <title>HTML5 语义化结构与现代表单规范</title>
 
-  <!-- 极简的基础内联样式，仅用于直观展示结构与布局，不掩盖 HTML 本身 -->
-  <style>
-    body { font-family: system-ui, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; color: #333; }
-    header, nav, main, article, aside, footer, section { border: 1px dashed #cbd5e1; padding: 12px; margin-bottom: 12px; border-radius: 6px; }
-    nav ul { list-style: none; display: flex; gap: 15px; padding: 0; margin: 0; }
-    form { display: grid; gap: 12px; max-width: 400px; }
-    label { display: flex; flex-direction: column; font-weight: 500; font-size: 0.9rem; }
-    input, select, textarea, button { padding: 8px 12px; border: 1px solid #94a3b8; border-radius: 4px; font-size: 1rem; }
-    button { background: #2563eb; color: #fff; cursor: pointer; border: none; font-weight: 600; }
-    .badge { background: #e0e7ff; color: #3730a3; padding: 2px 6px; border-radius: 4px; font-size: 0.8rem; }
-  </style>
-</head>
-<body>
+    <!-- 极简的基础内联样式，仅用于直观展示结构与布局，不掩盖 HTML 本身 -->
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        line-height: 1.6;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        color: #333;
+      }
+      header,
+      nav,
+      main,
+      article,
+      aside,
+      footer,
+      section {
+        border: 1px dashed #cbd5e1;
+        padding: 12px;
+        margin-bottom: 12px;
+        border-radius: 6px;
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 15px;
+        padding: 0;
+        margin: 0;
+      }
+      form {
+        display: grid;
+        gap: 12px;
+        max-width: 400px;
+      }
+      label {
+        display: flex;
+        flex-direction: column;
+        font-weight: 500;
+        font-size: 0.9rem;
+      }
+      input,
+      select,
+      textarea,
+      button {
+        padding: 8px 12px;
+        border: 1px solid #94a3b8;
+        border-radius: 4px;
+        font-size: 1rem;
+      }
+      button {
+        background: #2563eb;
+        color: #fff;
+        cursor: pointer;
+        border: none;
+        font-weight: 600;
+      }
+      .badge {
+        background: #e0e7ff;
+        color: #3730a3;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ============================================================ -->
+    <!-- 1. 页眉 (header)：放置网站标志 (Logo)、主标题、全局导航或作者信息 -->
+    <!-- ============================================================ -->
+    <header>
+      <h1>前端全栈学习之路 <span class="badge">阶段 01: HTML</span></h1>
+      <p>
+        HTML 负责页面骨架与内容语义；让机器、爬虫和用户都能理解你的文档结构。
+      </p>
+    </header>
 
-  <!-- ============================================================ -->
-  <!-- 1. 页眉 (header)：放置网站标志 (Logo)、主标题、全局导航或作者信息 -->
-  <!-- ============================================================ -->
-  <header>
-    <h1>前端全栈学习之路 <span class="badge">阶段 01: HTML</span></h1>
-    <p>HTML 负责页面骨架与内容语义；让机器、爬虫和用户都能理解你的文档结构。</p>
-  </header>
+    <!-- ============================================================ -->
+    <!-- 2. 导航栏 (nav)：包裹核心导航链接，辅助技术（如屏幕朗读）会优先识别 -->
+    <!-- ============================================================ -->
+    <nav aria-label="全站导航">
+      <ul>
+        <li><a href="#article-section">精选文章</a></li>
+        <li><a href="#form-section">用户反馈表单</a></li>
+        <li>
+          <a
+            href="https://developer.mozilla.org/zh-CN/docs/Learn_web_development"
+            target="_blank"
+            rel="noopener noreferrer"
+            >MDN 学习</a
+          >
+        </li>
+      </ul>
+    </nav>
 
-  <!-- ============================================================ -->
-  <!-- 2. 导航栏 (nav)：包裹核心导航链接，辅助技术（如屏幕朗读）会优先识别 -->
-  <!-- ============================================================ -->
-  <nav aria-label="全站导航">
-    <ul>
-      <li><a href="#article-section">精选文章</a></li>
-      <li><a href="#form-section">用户反馈表单</a></li>
-      <li><a href="https://developer.mozilla.org/zh-CN/docs/Learn_web_development" target="_blank" rel="noopener noreferrer">MDN 学习</a></li>
-    </ul>
-  </nav>
+    <!-- ============================================================ -->
+    <!-- 3. 主体内容 (main)：一个页面只能有一个 <main>，包含页面的核心独特内容 -->
+    <!-- ============================================================ -->
+    <main>
+      <!-- 章节 (section)：按主题对内容进行分组，通常应包含标题 (h2~h6) -->
+      <section id="article-section">
+        <h2>核心文章区域 (Semantic Section)</h2>
 
-  <!-- ============================================================ -->
-  <!-- 3. 主体内容 (main)：一个页面只能有一个 <main>，包含页面的核心独特内容 -->
-  <!-- ============================================================ -->
-  <main>
+        <!-- 独立内容块 (article)：代表一篇独立、完整、可单独分发的内容（如博客、新闻、评论） -->
+        <article>
+          <header>
+            <h3>为什么现代 Web 强调「语义化 (Semantics)」？</h3>
+            <time datetime="2026-10-13">2026年10月13日</time>
+          </header>
 
-    <!-- 章节 (section)：按主题对内容进行分组，通常应包含标题 (h2~h6) -->
-    <section id="article-section">
-      <h2>核心文章区域 (Semantic Section)</h2>
+          <p>
+            在早期的 Web 开发中，很多人习惯用
+            <code>&lt;div class="header"&gt;</code>、<code
+              >&lt;div class="nav"&gt;</code
+            >
+            来写页面，这被称为<strong>「div 汤 (div soup)」</strong>。
+          </p>
 
-      <!-- 独立内容块 (article)：代表一篇独立、完整、可单独分发的内容（如博客、新闻、评论） -->
-      <article>
-        <header>
-          <h3>为什么现代 Web 强调「语义化 (Semantics)」？</h3>
-          <time datetime="2026-10-13">2026年10月13日</time>
-        </header>
+          <p>现代 HTML5 引入了语义化标签，主要带来三大核心价值：</p>
+          <ol>
+            <li>
+              <strong>可访问性 (a11y)</strong
+              >：视障用户使用屏幕朗读器时，可以通过快捷键直接跳到
+              <code>&lt;main&gt;</code> 或 <code>&lt;nav&gt;</code>。
+            </li>
+            <li>
+              <strong>搜索引擎优化 (SEO)</strong
+              >：爬虫更容易提取权重高的标题和核心正文。
+            </li>
+            <li>
+              <strong>代码可读性与团队维护</strong
+              >：结构清晰，见名知意，远离无意义的嵌套。
+            </li>
+          </ol>
 
-        <p>在早期的 Web 开发中，很多人习惯用 <code>&lt;div class="header"&gt;</code>、<code>&lt;div class="nav"&gt;</code> 来写页面，这被称为<strong>「div 汤 (div soup)」</strong>。</p>
-        
-        <p>现代 HTML5 引入了语义化标签，主要带来三大核心价值：</p>
-        <ol>
-          <li><strong>可访问性 (a11y)</strong>：视障用户使用屏幕朗读器时，可以通过快捷键直接跳到 <code>&lt;main&gt;</code> 或 <code>&lt;nav&gt;</code>。</li>
-          <li><strong>搜索引擎优化 (SEO)</strong>：爬虫更容易提取权重高的标题和核心正文。</li>
-          <li><strong>代码可读性与团队维护</strong>：结构清晰，见名知意，远离无意义的嵌套。</li>
-        </ol>
+          <!-- 引用块 -->
+          <blockquote cite="https://developer.mozilla.org/">
+            <p>
+              “HTML 是 Web 的基础骨架。好的骨架让样式 (CSS) 和逻辑 (JS)
+              的编写水到渠成。”
+            </p>
+          </blockquote>
+        </article>
+      </section>
 
-        <!-- 引用块 -->
-        <blockquote cite="https://developer.mozilla.org/">
-          <p>“HTML 是 Web 的基础骨架。好的骨架让样式 (CSS) 和逻辑 (JS) 的编写水到渠成。”</p>
-        </blockquote>
-      </article>
-    </section>
+      <!-- 侧边栏/相关内容 (aside)：通常包含与周围内容相关但不属于主要流程的信息（广告、友情链接、目录等） -->
+      <aside>
+        <h3>💡 知识卡片：块级元素 vs 行内元素</h3>
+        <p>
+          <strong>块级元素 (Block)</strong>：如 <code>&lt;h1&gt;</code>,
+          <code>&lt;p&gt;</code>, <code>&lt;div&gt;</code>,
+          <code>&lt;section&gt;</code
+          >。独占一行，默认宽度撑满父元素，可设置宽高。
+        </p>
+        <p>
+          <strong>行内元素 (Inline)</strong>：如 <code>&lt;span&gt;</code>,
+          <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code>,
+          <code>&lt;code&gt;</code>。依附在文本流中，不换行，设置宽高无效。
+        </p>
+      </aside>
 
-    <!-- 侧边栏/相关内容 (aside)：通常包含与周围内容相关但不属于主要流程的信息（广告、友情链接、目录等） -->
-    <aside>
-      <h3>💡 知识卡片：块级元素 vs 行内元素</h3>
-      <p><strong>块级元素 (Block)</strong>：如 <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;div&gt;</code>, <code>&lt;section&gt;</code>。独占一行，默认宽度撑满父元素，可设置宽高。</p>
-      <p><strong>行内元素 (Inline)</strong>：如 <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;code&gt;</code>。依附在文本流中，不换行，设置宽高无效。</p>
-    </aside>
+      <!-- 表单系统 (form)：前端与后端数据交互的起点 -->
+      <section id="form-section">
+        <h2>前后端交互的起点：表单系统 (Forms)</h2>
+        <p>
+          表单是全栈开发的核心枢纽。掌握表单输入与验证机制是后续对接 API
+          的第一步。
+        </p>
 
-    <!-- 表单系统 (form)：前端与后端数据交互的起点 -->
-    <section id="form-section">
-      <h2>前后端交互的起点：表单系统 (Forms)</h2>
-      <p>表单是全栈开发的核心枢纽。掌握表单输入与验证机制是后续对接 API 的第一步。</p>
-
-      <!-- 
+        <!-- 
         form 核心属性：
         - action: 后端接收数据的接口 URL
         - method: HTTP 方法 (通常是 POST 或 GET)
       -->
-      <form action="/api/submit" method="POST">
-        <!-- 每一个 input 都应该有配套的 label，提升无障碍体验和可点击区域 -->
-        <label for="username">
-          用户名 (必填):
-          <!-- required 启用 HTML5 原生非空校验，minlength 限制最小长度 -->
-          <input type="text" id="username" name="username" placeholder="请输入你的昵称" required minlength="2" />
-        </label>
+        <form action="/api/submit" method="POST">
+          <!-- 每一个 input 都应该有配套的 label，提升无障碍体验和可点击区域 -->
+          <label for="username">
+            用户名 (必填):
+            <!-- required 启用 HTML5 原生非空校验，minlength 限制最小长度 -->
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="请输入你的昵称"
+              required
+              minlength="2"
+            />
+          </label>
 
-        <label for="email">
-          电子邮箱:
-          <!-- type="email" 会自动校验是否包含 @ 和合法域名，并在移动端弹出邮件专用键盘 -->
-          <input type="email" id="email" name="email" placeholder="example@domain.com" required />
-        </label>
+          <label for="email">
+            电子邮箱:
+            <!-- type="email" 会自动校验是否包含 @ 和合法域名，并在移动端弹出邮件专用键盘 -->
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="example@domain.com"
+              required
+            />
+          </label>
 
-        <label for="stack">
-          学习方向:
-          <select id="stack" name="stack">
-            <option value="frontend">纯前端工程师</option>
-            <option value="fullstack" selected>全栈工程师 (TypeScript + Node.js)</option>
-            <option value="backend">后端架构师</option>
-          </select>
-        </label>
+          <label for="stack">
+            学习方向:
+            <select id="stack" name="stack">
+              <option value="frontend">纯前端工程师</option>
+              <option value="fullstack" selected>
+                全栈工程师 (TypeScript + Node.js)
+              </option>
+              <option value="backend">后端架构师</option>
+            </select>
+          </label>
 
-        <label for="notes">
-          学习目标 / 备注:
-          <textarea id="notes" name="notes" rows="3" placeholder="写下你本周想完成的目标..."></textarea>
-        </label>
+          <label for="notes">
+            学习目标 / 备注:
+            <textarea
+              id="notes"
+              name="notes"
+              rows="3"
+              placeholder="写下你本周想完成的目标..."
+            ></textarea>
+          </label>
 
-        <!-- 提交按钮 -->
-        <button type="submit">提交信息到后端</button>
-      </form>
-    </section>
+          <!-- 提交按钮 -->
+          <button type="submit">提交信息到后端</button>
+        </form>
+      </section>
+    </main>
 
-  </main>
-
-  <!-- ============================================================ -->
-  <!-- 4. 页脚 (footer)：版权声明、备案号、联系方式、法律条款等 -->
-  <!-- ============================================================ -->
-  <footer>
-    <p>&copy; 2026 前端全栈训练营. 遵循 MIT 开源协议.</p>
-  </footer>
-
-</body>
+    <!-- ============================================================ -->
+    <!-- 4. 页脚 (footer)：版权声明、备案号、联系方式、法律条款等 -->
+    <!-- ============================================================ -->
+    <footer>
+      <p>&copy; 2026 前端全栈训练营. 遵循 MIT 开源协议.</p>
+    </footer>
+  </body>
 </html>

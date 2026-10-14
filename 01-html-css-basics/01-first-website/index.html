@@ -2,10 +2,9 @@
 <!doctype html>
 <!-- 文档语言声明 -->
 <html lang="en-US">
+  <!-- 根元素 -->
 
-<!-- 根元素 -->
-
-<head>
+  <head>
     <!-- 字符编码 -->
     <meta charset="utf-8" />
     <!-- 视口宽度 -->
@@ -16,16 +15,29 @@
     <link href="styles/style.css" rel="stylesheet" />
 
     <!-- 引入字体 -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+    />
+    <!--
+      引入脚本（使用 defer）
+      不加 defer 的脚本会在浏览器解析到它时立即执行，
+      放在 head 里时 body 还没被解析，querySelector("h1") 会返回 null。
+      加了 defer 后，浏览器会先下载脚本，但等整个 HTML 解析完成
+      （DOMContentLoaded 之前）才执行，此时 h1 已在 DOM 中。
+    -->
+    <script src="scripts/main.js" defer></script>
+  </head>
 
-</head>
+  <!-- 文档主体 -->
 
-<!-- 文档主体 -->
-
-<body>
+  <body>
     <!-- 图片 -->
-    <img src="https://cdn.prod.website-files.com/68a44d4040f98a4adf2207b6/6903d22d6ec42bcf1c632f75_52f59749d1e033ff2675c6686a07bcce83fb5046-1000x1000.svg"
-        alt="bulb" width="400px" />
+    <img
+      src="https://cdn.prod.website-files.com/68a44d4040f98a4adf2207b6/6903d22d6ec42bcf1c632f75_52f59749d1e033ff2675c6686a07bcce83fb5046-1000x1000.svg"
+      alt="bulb"
+      width="400px"
+    />
     <!-- 4 个级别的标题 -->
     <h1>Bulb</h1>
     <h2>Two</h2>
@@ -35,19 +47,22 @@
     <p>At Mozilla, we're a global community of</p>
     <!-- 无序列表（ul）, 有序列表（ol）, 列表项（li） -->
     <ul>
-        <li>technologists</li>
-        <li>thinkers</li>
-        <li>builders</li>
+      <li>technologists</li>
+      <li>thinkers</li>
+      <li>builders</li>
     </ul>
     <p>working together…</p>
     <!-- 链接 -->
     <p>Read more about our manifesto:</p>
     <a href="https://www.mozilla.org/zh-CN/about/manifesto/">
-        Mozilla Manifesto
+      Mozilla Manifesto
     </a>
-    <!-- 引入脚本 -->
-    <script src="scripts/main.js"></script>
-</body>
-<!-- 文档主体结束 -->
-
+    <!--
+      另一种引入脚本的方式：放在 body 末尾（</body> 标签前），不加 defer。
+      因为脚本执行到这一行时，上方的 h1 已被解析进 DOM，
+      main.js 里的 document.querySelector("h1") 才能找到元素。
+    -->
+    <!-- <script src="scripts/main.js"></script> -->
+  </body>
+  <!-- 文档主体结束 -->
 </html>
